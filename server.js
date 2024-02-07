@@ -16,7 +16,9 @@ app.use((req, res, next) => {
     console.log(req.path, req.method)
     next()
 })
-
+app.get("/api", (req,res) => {
+    res.send("<h1> Hello Helmet!!!</h1>")
+})
 app.use('/api/user', userRoutes)
 app.use('/api/todo', todoRoutes)
 
